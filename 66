@@ -1,0 +1,135 @@
+  local MBM_GUI = Instance.new("ScreenGui")
+  local MBM_FRAME = Instance.new("Frame")
+  local _1 = Instance.new("UICorner")
+  local _8 = Instance.new("TextLabel")
+  local _9 = Instance.new("UICorner")
+  local _4 = Instance.new("TextButton")
+  local _5 = Instance.new("UICorner")
+  local _6 = Instance.new("TextButton")
+  local _7 = Instance.new("UICorner")
+  local _2 = Instance.new("UIStroke")
+  local _3 = Instance.new("ImageButton")
+  local _10 = Instance.new("TextLabel")
+  local _11 = Instance.new("TextLabel")
+  local _12 = Instance.new("TextLabel")
+  
+  MBM_GUI.Name = "MBM_GUI"
+  MBM_GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+  MBM_GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+  
+  MBM_FRAME.Name = "MBM_FRAME"
+  MBM_FRAME.Parent = MBM_GUI
+  MBM_FRAME.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+  MBM_FRAME.BackgroundTransparency = 0.050
+  MBM_FRAME.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  MBM_FRAME.BorderSizePixel = 0
+  MBM_FRAME.Position = UDim2.new(0.299999982, 0, 0.265306115, 0)
+  MBM_FRAME.Size = UDim2.new(0, 370, 0, 241)
+  MBM_FRAME.Draggable = true
+  MBM_FRAME.Active = true
+  MBM_FRAME.Selectable = true
+  
+  _1.Name = "1"
+  _1.Parent = MBM_FRAME
+  
+  _8.Name = "8"
+  _8.Parent = MBM_FRAME
+  _8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  _8.BackgroundTransparency = 1.000
+  _8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _8.BorderSizePixel = 0
+  _8.Position = UDim2.new(0.0271171182, 0, 0.0418324992, 0)
+  _8.Size = UDim2.new(0, 232, 0, 28)
+  _8.Font = Enum.Font.LuckiestGuy
+  _8.Text = "MBM AUTO BOUNTY"
+  _8.TextColor3 = Color3.fromRGB(154, 35, 213)
+  _8.TextSize = 25.000
+  
+  _9.Name = "9"
+  _9.Parent = _8
+  
+  _4.Name = "4"
+  _4.Parent = MBM_FRAME
+  _4.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+  _4.BackgroundTransparency = 0.450
+  _4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _4.BorderSizePixel = 0
+  _4.Position = UDim2.new(0.0271171182, 0, 0.752985001, 0)
+  _4.Size = UDim2.new(0, 84, 0, 46)
+  _4.Font = Enum.Font.SourceSans
+  _4.Text = "Skip"
+  _4.TextColor3 = Color3.fromRGB(255, 255, 255)
+  _4.TextSize = 25.000
+  
+  _5.Name = "5"
+  _5.Parent = _4
+  
+  _6.Name = "6"
+  _6.Parent = MBM_FRAME
+  _6.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+  _6.BackgroundTransparency = 0.450
+  _6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _6.BorderSizePixel = 0
+  _6.Position = UDim2.new(0.298288286, 0, 0.752985001, 0)
+  _6.Size = UDim2.new(0, 84, 0, 46)
+  _6.Font = Enum.Font.SourceSans
+  _6.Text = "Reset"
+  _6.TextColor3 = Color3.fromRGB(255, 255, 255)
+  _6.TextSize = 25.000
+  
+  _7.Name = "7"
+  _7.Parent = _6
+  
+  _2.Thickness = 6.300000190734863
+  _2.Transparency = 0.5799999833106995
+  _2.Name = "2"
+  _2.Parent = MBM_FRAME
+  
+  _3.Name = "3"
+  _3.Parent = MBM_FRAME
+  _3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  _3.BackgroundTransparency = 1.000
+  _3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _3.BorderSizePixel = 0
+  _3.Position = UDim2.new(0.894864857, 0, 0, 0)
+  _3.Size = UDim2.new(0, 38, 0, 38)
+  _3.Image = "rbxassetid://17222467571"
+  
+  _10.Name = "10"
+  _10.Parent = MBM_FRAME
+  _10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  _10.BackgroundTransparency = 1.000
+  _10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _10.BorderSizePixel = 0
+  _10.Position = UDim2.new(0.0271171182, 0, 0.167329997, 0)
+  _10.Size = UDim2.new(0, 165, 0, 50)
+  _10.Font = Enum.Font.SourceSans
+  _10.Text = "Bounty/Honor :"
+  _10.TextColor3 = Color3.fromRGB(255, 255, 255)
+  _10.TextSize = 25.000
+  
+  _11.Name = "11"
+  _11.Parent = MBM_FRAME
+  _11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  _11.BackgroundTransparency = 1.000
+  _11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _11.BorderSizePixel = 0
+  _11.Position = UDim2.new(0.0542342365, 0, 0.334659994, 0)
+  _11.Size = UDim2.new(0, 164, 0, 50)
+  _11.Font = Enum.Font.SourceSans
+  _11.Text = "Client Time :"
+  _11.TextColor3 = Color3.fromRGB(255, 255, 255)
+  _11.TextSize = 25.000
+  
+  _12.Name = "12"
+  _12.Parent = MBM_FRAME
+  _12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  _12.BackgroundTransparency = 1.000
+  _12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+  _12.BorderSizePixel = 0
+  _12.Position = UDim2.new(0, 0, 0.50199002, 0)
+  _12.Size = UDim2.new(0, 185, 0, 50)
+  _12.Font = Enum.Font.SourceSans
+  _12.Text = "Time Elapsed :"
+  _12.TextColor3 = Color3.fromRGB(255, 255, 255)
+  _12.TextSize = 25.000
