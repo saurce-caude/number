@@ -1,0 +1,52 @@
+----------------------------------------------------------------------------------------------------------------------------------------------
+local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/ngmHUBrvs/hubhub/main/hub%20rac%20nao%20skid/bu%20dai%20tao%20cho%20source%20k%20can%20deobf"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/ngmHUBrvs/hubhub/main/buy%20bu%20by"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/ngmHUBrvs/hubhub/main/skid%20an%20cac%20do%20em"))()
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+local Window = Fluent:CreateWindow({
+    Title = "Mbm Hub 3",
+    SubTitle = "- join my discord server : https://discord.gg/ZRapJfwPmK",
+    TabWidth = 145,
+    Size = UDim2.fromOffset(515, 350),
+    Acrylic = false,
+    Theme = "Gray",
+    MinimizeKey = Enum.KeyCode.End
+})
+local Tabs = {
+    Setting = Window:AddTab({ Title = "Settings", Icon = "mbm" }),
+    Fluent = Window:AddTab({ Title = "Config", Icon = "mbm" }),
+}
+local Options = Fluent.Options
+do
+    local ToggleNoClip = Tabs.Setting:AddToggle("ToggleNoClip", {Title = "No Clip", Description = "Xuyên Tường", Default = false })
+ToggleNoClip:OnChanged(function(value)
+    _G.LOf = value
+end)
+Options.ToggleNoClip:SetValue(false)
+spawn(function()
+    pcall(function()
+        game:GetService("RunService").Stepped:Connect(function()
+            if _G.LOf then
+                for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false    
+                    end
+                end
+            end
+        end)
+    end)
+end)
+
+InterfaceManager:SetFolder("MBM_HUB")
+SaveManager:SetFolder("MBM_HUB")
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:BuildInterfaceSection(Tabs.Fluent)
+SaveManager:BuildConfigSection(Tabs.Fluent)
+Window:SelectTab(1)
+SaveManager:LoadAutoloadConfig()
+
+end
