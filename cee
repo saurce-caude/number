@@ -1,0 +1,166 @@
+--Window:Minimize()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
+
+local Window = redzlib:MakeWindow({
+  Title = "MBM Hub",
+  SubTitle = "by player.81",
+  SaveFolder = "MBM_HUB.lua"
+})
+local Tab1 = Window:MakeTab({"1", ""})
+local Tab2 = Window:MakeTab({"2", ""})
+
+local player = game.Players.LocalPlayer
+local code = game.LocalizationService.RobloxLocaleId
+
+Tab1:Addprofile({
+  Name = player.Name,
+  Description = "Player's country : " .. code .. "",
+  Avt = game.Players:GetUserThumbnailAsync(
+        game.Players.LocalPlayer.UserId,
+        Enum.ThumbnailType.AvatarThumbnail,
+        Enum.ThumbnailSize.Size300x300),
+  profilelink = "https://www.roblox.com/users/" .. player.UserId,
+})
+
+Tab1:AddDiscordInvite({
+  Name = "MBM Hub | Community",
+  Logo = "",
+  Invite = "https://dsc.gg/m1m"
+})
+
+Tab1:AddTextBox({
+    Name = "R",
+    Description = "input",
+    Default = "00",
+    Callback = function(Value)
+      _G.R = Value
+    end
+  })
+  
+  Tab1:AddTextBox({
+      Name = "G",
+      Description = "input",
+      Default = "00",
+      Callback = function(Value)
+        _G.G = Value
+      end
+    })
+  
+    Tab1:AddTextBox({
+      Name = "B",
+      Description = "input",
+      Default = "00",
+      Callback = function(Value)
+        _G.B = Value
+      end
+    })
+  
+    local chag = Tab1:AddDropdown({
+      Name = "select",
+      Description = "",
+      Options = {"Background", "text", "ScrollBar","Theme","Stroke","desc"},
+      Default = "Background",
+      Callback = function(Value)
+        _G.RGB = Value
+      end
+    })
+    Tab1:AddParagraph({"Recommended", "change color text and desc"})
+    local But = Tab1:AddButton({"chage color", function()
+      local Dia = Window:Dialog({
+        Title = "Dialog",
+        Text = "This is a Dialog",
+        Options = {
+          {"Confirm", function()
+            if _G.RGB == "Background" then
+              redzlib:SetFR()
+            elseif _G.RGB == "text" then
+              redzlib:Setxt()
+            elseif _G.RGB == "ScrollBar" then
+              redzlib:Setsb()
+            elseif _G.RGB == "label" then
+              redzlib:Settxt()
+            elseif _G.RGB == "Theme" then
+              redzlib:Setth()
+            elseif _G.RGB == "Stroke" then
+              redzlib:Setst()
+            end
+          end},
+          {"Cancel", function()
+
+          end}
+        }
+      })
+    end})
+
+    local But = Tab1:AddButton({"reset color", function()
+      local Dia = Window:Dialog({
+        Title = "Dialog",
+        Text = "This is a Dialog",
+        Options = {
+          {"Confirm", function()
+            redzlib:Setre()
+          end},
+          {"Cancel", function()
+          end}
+        }
+      })
+    end})
+
+Window:SelectTab(Tab1)
+local Section = Tab2:AddSection({"Section"})
+local Paragraph = Tab2:AddParagraph({"Paragraph", "This is a Paragraph\nSecond Line"})
+
+local Number = 0
+local Button = Tab2:AddButton({"Button", function()
+  Number = Number + 1
+  Section:Set("Number : " .. tostring(Number))
+  local Dialog = Window:Dialog({
+    Title = "Dialog",
+    Text = "This is a Dialog",
+    Options = {
+      {"Confirm", function()
+        
+      end},
+
+      {"Cancel", function()
+      end}
+    }
+  })
+end})
+
+local Button = Tab2:AddButton({
+  Name = "Invisible Toggle",
+  Description = "Makes the Toggles Invisible"
+})
+
+local Toggle1 = Tab2:AddToggle({
+  Name = "Toggle 1",
+  Description = "This is a <font color='rgb(88, 101, 242)'>Toggle</font> Example",
+  Default = false
+})
+
+local Toggle2 = Tab2:AddToggle({
+  Name = "Toggle 2",
+  Default = true
+})
+
+Button:Callback(Toggle1.Visible)
+Button:Callback(Toggle2.Visible)
+
+Toggle1:Callback(function(Value)
+  Toggle2:Set(false)
+end)
+Toggle2:Callback(function(Value)
+  Toggle1:Set(false)
+end)
+
+Tab2:AddSlider({
+  Name = "Slider",
+  Min = 1,
+  Max = 10,
+  Increase = 1,
+  Default = 5,
+  Callback = function(Value)
+    
+  end
+})
