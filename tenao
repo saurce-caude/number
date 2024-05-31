@@ -1,0 +1,191 @@
+--Window:Minimize()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/saurce-caude/number/main/none"))()
+
+local Window = redzlib:MakeWindow({
+  Title = "MBM Hub",
+  SubTitle = "by player.81",
+  SaveFolder = "MBM_HUB.lua",
+  SaveRejoin = true
+})
+local Tab1 = Window:MakeTab({"1", ""})
+local Tab2 = Window:MakeTab({"2", ""})
+
+local p = Instance.new("ScreenGui")
+local q = Instance.new("TextButton")
+local r = Instance.new("UICorner")
+local s = Instance.new("ImageLabel")
+r.Name = "sex"
+r.Parent = q;
+s.Name = "sexgay"
+s.Parent = q;
+s.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+s.BackgroundTransparency = 1.000;
+s.BorderSizePixel = 0;
+s.Position = UDim2.new(0.234619886, 0, 0.239034846, 0)
+s.Size = UDim2.new(0, 30, 0, 30)
+s.Image = "rbxassetid://17383887099"
+p.Name = "nung"
+p.Parent = game.CoreGui;
+p.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+q.Name = "gay"
+q.Parent = p;
+q.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+q.BackgroundTransparency = 0.1;
+q.BorderSizePixel = 0;
+q.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+q.Size = UDim2.new(0, 55, 0, 55)
+q.Font = Enum.Font.SourceSans;
+q.Text = ""
+q.TextColor3 = Color3.fromRGB(153, 51, 255)
+q.TextSize = 20.000;
+q.Draggable = true;
+q.MouseButton1Click:Connect(function()
+	Window:Minimize()
+end)
+
+Tab1:Addprofile({
+    Desc = "hi"
+})
+
+Tab1:AddDiscordInvite({
+  Name = "MBM Hub | Community",
+  Logo = "",
+  Invite = "https://dsc.gg/m1m"
+})
+
+Tab1:AddTextBox({
+    Name = "R",
+    Description = "input",
+    Default = "00",
+    Callback = function(Value)
+      _G.R = Value
+    end
+  })
+  
+  Tab1:AddTextBox({
+      Name = "G",
+      Description = "input",
+      Default = "00",
+      Callback = function(Value)
+        _G.G = Value
+      end
+    })
+  
+    Tab1:AddTextBox({
+      Name = "B",
+      Description = "input",
+      Default = "00",
+      Callback = function(Value)
+        _G.B = Value
+      end
+    })
+  
+    local chag = Tab1:AddDropdown({
+      Name = "select",
+      Description = "",
+      Options = {"Background", "text", "ScrollBar","Theme","Stroke","desc"},
+      Default = "text",
+      Callback = function(Value)
+        _G.RGB = Value
+      end
+    })
+    Tab1:AddParagraph({"Recommended", "change color text and desc"})
+    local But = Tab1:AddButton({"chage color", function()
+      local Dia = Window:Dialog({
+        Title = "Dialog",
+        Text = "This is a Dialog",
+        Options = {
+          {"Confirm", function()
+            if _G.RGB == "Background" then
+              redzlib:SetFR()
+            elseif _G.RGB == "text" then
+              redzlib:Setxt()
+            elseif _G.RGB == "ScrollBar" then
+              redzlib:Setsb()
+            elseif _G.RGB == "label" then
+              redzlib:Settxt()
+            elseif _G.RGB == "Theme" then
+              redzlib:Setth()
+            elseif _G.RGB == "Stroke" then
+              redzlib:Setst()
+            end
+          end},
+          {"Cancel", function()
+
+          end}
+        }
+      })
+    end})
+
+    local But = Tab1:AddButton({"reset color", function()
+      local Dia = Window:Dialog({
+        Title = "Dialog",
+        Text = "This is a Dialog",
+        Options = {
+          {"Confirm", function()
+            redzlib:Setre()
+          end},
+          {"Cancel", function()
+          end}
+        }
+      })
+    end})
+
+Window:SelectTab(Tab1)
+local Section = Tab2:AddSection({"Section"})
+local Paragraph = Tab2:AddParagraph({"Paragraph", "This is a Paragraph\nSecond Line"})
+
+local Number = 0
+local Button = Tab2:AddButton({"Button", function()
+  Number = Number + 1
+  Section:Set("Number : " .. tostring(Number))
+  local Dialog = Window:Dialog({
+    Title = "Dialog",
+    Text = "This is a Dialog",
+    Options = {
+      {"Confirm", function()
+        
+      end},
+
+      {"Cancel", function()
+      end}
+    }
+  })
+end})
+
+local Button = Tab2:AddButton({
+  Name = "Invisible Toggle",
+  Description = "Makes the Toggles Invisible"
+})
+
+local Toggle1 = Tab2:AddToggle({
+  Name = "Toggle 1",
+  Description = "This is a <font color='rgb(88, 101, 242)'>Toggle</font> Example",
+  Default = false
+})
+
+local Toggle2 = Tab2:AddToggle({
+  Name = "Toggle 2",
+  Default = true
+})
+
+Button:Callback(Toggle1.Visible)
+Button:Callback(Toggle2.Visible)
+
+Toggle1:Callback(function(Value)
+  Toggle2:Set(false)
+end)
+Toggle2:Callback(function(Value)
+  Toggle1:Set(false)
+end)
+
+Tab2:AddSlider({
+  Name = "Slider",
+  Min = 1,
+  Max = 10,
+  Increase = 1,
+  Default = 5,
+  Callback = function(Value)
+    
+  end
+})
